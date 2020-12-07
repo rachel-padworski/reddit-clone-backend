@@ -10,7 +10,10 @@ class Api::V1::CommentsController < ApplicationController
     def index
         # i want to let users view all comments on a post
         # comments = @user.comments ....this would allow us to view all comments by a user.
-        comments = @post.comments
+        # if @post
+        #     comments = @post.comments
+        # else
+            comments = Comment.all
         render json: comments
     end
 
