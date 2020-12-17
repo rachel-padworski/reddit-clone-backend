@@ -12,7 +12,7 @@ class Api::V1::PostsController < ApplicationController
         if post.save
             render json: post, status: 200
         else
-            render json: {errors: post.errors.full_messages}, status: :unprocessible_entity
+            render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
         end
     end
 
@@ -20,6 +20,15 @@ class Api::V1::PostsController < ApplicationController
     def show
         post = Post.find(params[:id])
         render json: post
+    end
+
+    def update
+        post = Post.find(params[:id])
+        if post.update(post_params)
+            render json: post, status: 200
+        else
+            render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def destroy
@@ -30,7 +39,8 @@ class Api::V1::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:title, :content, :image_url, :user_id)
+        # params.require(:post).permit(:title, :content, :image_url, :user_id)
+        params.permit(:title, :content, :image_url, :user_id)
     end
 
 end

@@ -8,13 +8,8 @@ class Api::V1::CommentsController < ApplicationController
     before_action :set_post
 
     def index
-        # i want to let users view all comments on a post
-        # comments = @user.comments ....this would allow us to view all comments by a user.
-        # if @post
-        #     comments = @post.comments
-        # else
-            comments = Comment.all
-        render json: comments
+        comments = Comment.all
+        render json: comments, status: 200
     end
 
     def create
@@ -34,6 +29,17 @@ class Api::V1::CommentsController < ApplicationController
         render json: comment
     end
 
+    def update
+        # not quite sure yet.
+        # @user = User.find(params[:user_id])
+        comment = @post.comments.find_by(id: params[:id])
+        if @comment.update(content: params[:content])
+            render json: comment, status: 200
+        else
+            render json: {error: 'Could not update'}
+        end
+    end
+
     def destroy
         comment = @post.comments.find_by(id: params[:id])
         comment.destroy
@@ -41,13 +47,17 @@ class Api::V1::CommentsController < ApplicationController
 
     private
 
-    # setting an instance variable to find the account based on the user_id. Comments belong to a user, so we need to find a comment associated with a specific user_id.
+    # setting an instance variable to find the post based on the user_id. Comments belong to a user, so we need to find a comment associated with a specific user_id.
     # def set_user
     #     @user = User.find(params[:user_id])
     # end
 
     def set_post
         @post = Post.find(params[:post_id])
+    end
+
+    def set_comment
+        @comment = Comment.find_by(id: params[:id])
     end
 
     def comment_params
