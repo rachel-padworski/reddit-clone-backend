@@ -17,7 +17,7 @@ class Api::V1::CommentsController < ApplicationController
         # it would allow us to find the user's id before creating the comment...but we need the post id so we know where it's posting.
         comment = @post.comments.new(comment_params)
         if comment.save
-            render json: comment, status: 200
+            render json: @post, status: 200
         else
             render json: {errors: comment.errors.full_messages}, status: :unprocessible_entity
         end
