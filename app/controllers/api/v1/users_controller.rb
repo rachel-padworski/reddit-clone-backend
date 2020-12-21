@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
 
 
     def create
-        user = Usern.new(user_params)
+        user = User.new(user_params)
         if user.save
             session[:user_id] = user.id
             render json: user, status: 200
