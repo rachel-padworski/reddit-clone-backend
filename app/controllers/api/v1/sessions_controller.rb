@@ -1,27 +1,26 @@
 class Api::V1::SessionsController < ApplicationController
   
-    def create 
-      user = User.find_by(username: params[:session][:username])
-  
-      if user && user.authenticate(params[:session][:password])
+    def login
+      user = User.find_by(username: params[:username])
+      if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        render json: user, status: 200
+        render json: {user: UserSerializer.new(user)}, status: 200
       else
         render json: {
-          error: "Invalid Credentials"
+          error: "Invalid Username or Password"
         }
       end
     end
   
-    def get_current_user
-      if logged_in?
-        render json: current_user, status: 200
-      else
-        render json: {
-          error: "No user logged in"
-        }
-      end
-    end
+    # def get_current_user
+    #   if logged_in?
+    #     render json: current_user, status: 200
+    #   else
+    #     render json: {
+    #       error: "No user logged in"
+    #     }
+    #   end
+    # end
   
     def destroy
       session.delete :user_id
