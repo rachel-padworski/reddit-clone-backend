@@ -15,18 +15,20 @@ This blog app is a SPA (single page app) created with Ruby on Rails and React-Re
 # Prerequisites
 Install the following or check the version by typing -v (i.e. ruby -v) in your terminal.  /n
   /n
-```Github  /n
-Ruby 2.7.0p0  /n
-Rails 6.0.3.4```
-
+```
+Github
+Ruby 2.7.0p0
+Rails 6.0.3.4
+```
 
 # Installation
 To use this app, clone this backend [repo](https://github.com/rachel-padworski/reddit-clone-backend) and use it alongside the frontend [repo](https://github.com/rachel-padworski/reddit-clone-frontend).
 
 
 # Usage
-```bundle install  /n
-rails s```  /n
+```bundle install
+rails s 
+```
 Navigate to http://localhost:3000 in your browser.
 
 # Contributing
