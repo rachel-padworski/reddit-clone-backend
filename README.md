@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Overview
+* [Description](https://github.com/rachel-padworski/reddit-clone-backend#blogging-app)
+* [Installation](https://github.com/rachel-padworski/reddit-clone-backend#installation)
+* [Usage](https://github.com/rachel-padworski/reddit-clone-backend#usage)
+* [Contributing](https://github.com/rachel-padworski/reddit-clone-backend#contributing)
+* [License](https://github.com/rachel-padworski/reddit-clone-backend#license)
 
-* Ruby version
+# Blogging App
+This blog app is a SPA (single page app) created with Ruby on Rails and React-Redux for users to create and comment on blog posts. It started as a Reddit Clone, but has since transformed. Frontend [here](https://github.com/rachel-padworski/reddit-clone-frontend).
 
-* System dependencies
 
-* Configuration
+# Prerequisites
+Install the following or check the version by typing -v (i.e. ruby -v) in your terminal.
 
-* Database creation
+Github
+Ruby 2.7.0p0
+Rails 6.0.3.4
 
-* Database initialization
 
-* How to run the test suite
+# Installation
+To use this app, clone this backend [repo](https://github.com/rachel-padworski/reddit-clone-backend) and use it alongside the frontend [repo](https://github.com/rachel-padworski/reddit-clone-frontend).
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Usage
+bundle install
+rails s
+Navigate to http://localhost:3000 in your browser.
 
-* ...
+# Contributing
+Bug reports and pull requests are welcome at [https://github.com/rachel-padworski/reddit-clone-backend](https://github.com/rachel-padworski/reddit-clone-backend). Contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/).
+
+# License
+Distributed under the [MIT License](https://opensource.org/licenses/MIT)
+
+
