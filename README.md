@@ -13,11 +13,11 @@ This blog app is a SPA (single page app) created with Ruby on Rails and React-Re
 
 
 # Prerequisites
-Install the following or check the version by typing -v (i.e. ruby -v) in your terminal.
-
-Github
-Ruby 2.7.0p0
-Rails 6.0.3.4
+Install the following or check the version by typing -v (i.e. ruby -v) in your terminal.  /n
+  /n
+```Github  /n
+Ruby 2.7.0p0  /n
+Rails 6.0.3.4```
 
 
 # Installation
@@ -25,8 +25,8 @@ To use this app, clone this backend [repo](https://github.com/rachel-padworski/r
 
 
 # Usage
-bundle install
-rails s
+```bundle install  /n
+rails s```  /n
 Navigate to http://localhost:3000 in your browser.
 
 # Contributing
