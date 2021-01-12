@@ -31,7 +31,7 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def update
-        binding.pry
+        # binding.pry
         comment = Comment.find_by(id: params[:id])
         if comment.update(content: params[:content])
             render json: comment, status: 200
